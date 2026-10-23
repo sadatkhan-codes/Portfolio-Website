@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Mohd Sadat Khan  —  Developer & ECE Undergraduate | BIT Mesra</title>
+  <meta name="description" content="Personal developer portfolio of Mohd Sadat Khan, first-year B.Tech Electronics and Communication Engineering student at BIT Mesra, Ranchi.">
+  <meta name="theme-color" content="#080605">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mohd Sadat Khan — Developer &amp; ECE Undergraduate | BIT Mesra">
+  <meta property="og:description" content="Personal developer portfolio of Mohd Sadat Khan, first-year B.Tech Electronics and Communication Engineering student at BIT Mesra, Ranchi.">
+  <meta property="og:image" content="253d481eb4efe88ffebfd8d3fb855655.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mohd Sadat Khan — Developer &amp; ECE Undergraduate | BIT Mesra">
+  <meta name="twitter:description" content="Personal developer portfolio of Mohd Sadat Khan, first-year B.Tech Electronics and Communication Engineering student at BIT Mesra, Ranchi.">
+  <meta name="twitter:image" content="253d481eb4efe88ffebfd8d3fb855655.jpg">
+
+  <!-- Google Fonts: Space Grotesk (Primary Headings), Plus Jakarta Sans (Secondary & Body), JetBrains Mono (Metadata/Microcopy) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Canvas for Cinematic Scroll Animation (Fixed) -->
+  <canvas id="animation-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Cinematic Glow & Vignette Layer (Transparent so animation stays visible) -->
+  <div class="cinematic-backdrop-overlay" aria-hidden="true"></div>
+
+  <!-- Sleek Minimal Preloader (Fades away smoothly as frames load) -->
+  <div id="loader-overlay" class="loader-overlay">
+    <div class="loader-container">
+      <div class="loader-brand">MOHD SADAT KHAN</div>
+      <div class="loader-track">
+        <div id="loader-progress" class="loader-fill"></div>
+      </div>
+      <div class="loader-meta">
+        <span class="loader-status">INITIALIZING SEQUENCE</span>
+        <span id="loader-percentage" class="loader-text">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fixed Top Navigation -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#intro" class="brand-logo" aria-label="Mohd Sadat Khan Portfolio">
+        <span class="logo-mark">MSK</span>
+        <span class="logo-name">SADAT KHAN</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="#about" class="nav-link"><span class="nav-idx">01</span>About</a>
+        <a href="#education" class="nav-link"><span class="nav-idx">02</span>Education</a>
+        <a href="#skills" class="nav-link"><span class="nav-idx">03</span>Tech Stack</a>
+        <a href="#exploration" class="nav-link"><span class="nav-idx">04</span>Exploration</a>
+        <a href="#projects" class="nav-link"><span class="nav-idx">05</span>Projects</a>
+        <a href="journey.html" class="nav-link"><span class="nav-idx">07</span>Journey</a>
+        <a href="#contact" class="nav-link contact-pill">Contact</a>
+      </nav>
+
+      <button id="mobile-menu-btn" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-nav-drawer" class="mobile-drawer" aria-hidden="true">
+      <nav class="mobile-nav-links">
+        <a href="#about" class="mobile-link"><span class="nav-idx">01</span>About</a>
+        <a href="#education" class="mobile-link"><span class="nav-idx">02</span>Education</a>
+        <a href="#skills" class="mobile-link"><span class="nav-idx">03</span>Tech Stack</a>
+        <a href="#exploration" class="mobile-link"><span class="nav-idx">04</span>Exploration</a>
+        <a href="#projects" class="mobile-link"><span class="nav-idx">05</span>Selected Work</a>
+        <a href="#in-progress" class="mobile-link"><span class="nav-idx">06</span>In Progress</a>
+        <a href="journey.html" class="mobile-link"><span class="nav-idx">07</span>The Journey</a>
+        <a href="#beyond-code" class="mobile-link"><span class="nav-idx">08</span>Beyond Code</a>
+        <a href="#contact" class="mobile-link"><span class="nav-idx">09</span>Contact</a>
+      </nav>
+      <div class="mobile-drawer-footer">
+        <span class="mobile-status-tag">B.TECH ECE  ·  BIT MESRA</span>
+        <div class="mobile-socials">
+          <a href="https://github.com/sadatkhan-codes" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/mohd-sadat-khan-328823410/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Website Content Wrapper -->
+  <main id="main-content" class="content-wrapper">
+
+    <!-- INTRO GREETING SECTION (Face Graphic + Popping Bubble with Typewriter Animation) -->
+    <section id="intro" class="intro-section">
+      <div class="intro-container">
+        
+        <!-- Popping Speech Bubble with Live Typing Animation -->
+        <div class="speech-bubble-wrapper">
+          <div class="speech-bubble" id="intro-speech-bubble">
+            <div class="bubble-header-strip">
+              <span class="bubble-live-dot"></span>
+              <span class="bubble-name-tag">SADAT KHAN</span>
+            </div>
+            <div class="bubble-body">
+              <span id="typewriter-text" class="typewriter-text"></span>
+              <span class="typing-cursor" aria-hidden="true">|</span>
+            </div>
+            <div class="bubble-tail" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <!-- Prompt to scroll down for more info -->
+        <a href="#hero" class="intro-scroll-prompt" aria-label="Scroll for more info">
+          <span class="prompt-text">SCROLL TO EXPLORE</span>
+          <div class="prompt-chevron">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10l5 5 5-5"/></svg>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="hero-vignette-ambient" aria-hidden="true"></div>
+      <div class="section-container hero-container">
+        
+        <div class="hero-content-block">
+          <div class="hero-header-meta reveal-item">
+            <div class="hero-tag">
+              <span class="pulsing-dot"></span>
+              <span class="hero-tag-text">ECE UNDERGRADUATE  ·  BIT MESRA</span>
+            </div>
+            <div class="hero-status-badge">
+              B.TECH ECE  ·  CLASS OF 2030
+            </div>
+          </div>
+
+          <h1 class="hero-title reveal-item">
+            <span class="title-line">BUILDING</span>
+            <span class="title-line text-copper">WHAT'S NEXT.</span>
+          </h1>
+
+          <p class="hero-description reveal-item">
+            I'm Mohd Sadat Khan, an ECE undergraduate exploring software development, electronics, and the technologies shaping our future.
+          </p>
+
+          <div class="hero-actions reveal-item">
+            <a href="#projects" class="btn btn-primary" id="btn-explore">
+              <span>EXPLORE MY WORK</span>
+              <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary" id="btn-connect">
+              <span>LET'S CONNECT</span>
+            </a>
+          </div>
+
+          <div class="hero-social-strip reveal-item">
+            <a href="https://github.com/sadatkhan-codes" target="_blank" rel="noopener noreferrer" class="social-chip" aria-label="GitHub Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/mohd-sadat-khan-328823410/" target="_blank" rel="noopener noreferrer" class="social-chip" aria-label="LinkedIn Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="hero-scroll-indicator" aria-hidden="true">
+          <span class="scroll-label">SCROLL TO EXPLORE</span>
+          <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 01: ABOUT ME -->
+    <section id="about" class="portfolio-section">
+      <div class="section-container">
+        
+        <div class="section-header reveal-item">
+          <span class="section-badge">01 / ABOUT ME</span>
+          <h2 class="section-title">CURIOUS BY NATURE.<br><span class="text-copper">BUILDING BY PRACTICE.</span></h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-narrative-card editorial-card reveal-item">
+            <div class="card-glow-accent"></div>
+            <p class="lead-statement">
+              I'm Mohd Sadat Khan, a first-year B.Tech Electronics and Communication Engineering student at BIT Mesra, Ranchi.
+            </p>
+            <p class="body-statement">
+              I'm interested in understanding how technology works, from software and digital experiences to electronics and engineering systems. I'm developing my programming fundamentals, exploring web development, and learning by building practical projects.
+            </p>
+            <p class="body-statement text-highlight">
+              My goal is to strengthen my technical skills, create meaningful projects, and explore the intersection of software and engineering.
+            </p>
+          </div>
+
+          <div class="about-cards-column">
+            <!-- Card 1 -->
+            <div class="info-card editorial-card reveal-item">
+              <div class="card-header-line">
+                <span class="card-tag">01  ·  CORE</span>
+                <span class="card-dot"></span>
+              </div>
+              <h3 class="card-title">MY FOUNDATION</h3>
+              <p class="card-desc">
+                Electronics and Communication Engineering. Learning the fundamentals of electronics, circuits, and engineering systems.
+              </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="info-card editorial-card reveal-item">
+              <div class="card-header-line">
+                <span class="card-tag">02  ·  ACTIVE</span>
+                <span class="card-dot"></span>
+              </div>
+              <h3 class="card-title">MY CURRENT FOCUS</h3>
+              <p class="card-desc">
+                Programming and Web Development. Strengthening my programming fundamentals, problem-solving skills, and ability to build applications.
+              </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="info-card editorial-card reveal-item">
+              <div class="card-header-line">
+                <span class="card-tag">03  ·  FUTURE</span>
+                <span class="card-dot"></span>
+              </div>
+              <h3 class="card-title">MY DIRECTION</h3>
+              <p class="card-desc">
+                Learning Through Projects. Turning ideas into practical projects while exploring software, electronics, and emerging technologies.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 02: EDUCATION -->
+    <section id="education" class="portfolio-section">
+      <div class="section-container">
+        
+        <div class="section-header reveal-item">
+          <span class="section-badge">02 / EDUCATION</span>
+          <h2 class="section-title">WHERE MY JOURNEY<br><span class="text-copper">BEGINS.</span></h2>
+        </div>
+
+        <!-- Subsection A: University Education (Primary Emphasis) -->
+        <div class="university-banner-card editorial-card reveal-item">
+          <div class="uni-header-row">
+            <div>
+              <span class="sub-label copper-badge">UNIVERSITY EDUCATION  ·  CURRENTLY PURSUING</span>
+              <h3 class="uni-name">BIRLA INSTITUTE OF TECHNOLOGY, MESRA</h3>
+              <p class="uni-location">BIT Mesra, Ranchi, Jharkhand</p>
+            </div>
+            <div class="uni-meta-pill">
+              <span class="duration-tag">2026 – 2030</span>
+              <span class="status-indicator-tag"><span class="pulse-indicator"></span>First Year  ·  Active</span>
+            </div>
+          </div>
+
+          <div class="uni-details-grid">
+            <div class="uni-detail-item">
+              <span class="detail-label">DEGREE</span>
+              <span class="detail-val">Bachelor of Technology (B.Tech.)</span>
+            </div>
+            <div class="uni-detail-item">
+              <span class="detail-label">BRANCH</span>
+              <span class="detail-val">Electronics and Communication Engineering</span>
+            </div>
+            <div class="uni-detail-item">
+              <span class="detail-label">FOCUS</span>
+              <span class="detail-val">Core Engineering &amp; Computing</span>
+            </div>
+          </div>
+
+          <div class="uni-statement-box">
+            <p class="quote-text">
+              "Building a foundation in engineering while developing programming skills and exploring different areas of technology."
+            </p>
+          </div>
+        </div>
+
+        <!-- Subsection B: School Education (Class XII & Class X) -->
+        <div class="subsection-divider reveal-item">
+          <span class="divider-label">ACADEMIC BACKGROUND</span>
+        </div>
+
+        <div class="school-dual-grid">
+          <!-- Class XII: Hill Spring College -->
+          <div class="academic-record-card editorial-card reveal-item">
+            <div class="academic-card-top">
+              <span class="academic-year">2026</span>
+              <span class="board-badge">MAHARASHTRA STATE BOARD</span>
+            </div>
+            <h4 class="school-name">HILL SPRING COLLEGE</h4>
+            <p class="school-sub">Kalyan, Maharashtra  ·  Class XII</p>
+
+            <div class="overall-score-pill">
+              <span class="score-label">OVERALL PERCENTAGE</span>
+              <span class="score-large">89.67%</span>
+            </div>
+
+            <div class="highlight-scores-row">
+              <div class="highlight-score-box">
+                <span class="subject-name">MATHEMATICS</span>
+                <span class="subject-mark">98<span class="mark-total">/100</span></span>
+              </div>
+              <div class="highlight-score-box">
+                <span class="subject-name">COMPUTER SCIENCE</span>
+                <span class="subject-mark">189<span class="mark-total">/200</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Class X: Sacred Heart School -->
+          <div class="academic-record-card editorial-card reveal-item">
+            <div class="academic-card-top">
+              <span class="academic-year">2024</span>
+              <span class="board-badge">CBSE BOARD</span>
+            </div>
+            <h4 class="school-name">SACRED HEART SCHOOL</h4>
+            <p class="school-sub">Kalyan, Maharashtra  ·  Class X</p>
+
+            <div class="overall-score-pill">
+              <span class="score-label">OVERALL PERCENTAGE</span>
+              <span class="score-large">96.40%</span>
+            </div>
+
+            <div class="highlight-scores-row">
+              <div class="highlight-score-box perfect-highlight">
+                <div class="score-badge-perfect">PERFECT SCORE</div>
+                <span class="subject-name">MATHEMATICS</span>
+                <span class="subject-mark text-copper">100<span class="mark-total">/100</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subsection C: Competitive Examination Results -->
+        <div class="subsection-divider reveal-item">
+          <span class="divider-label">COMPETITIVE EXAMINATIONS</span>
+        </div>
+
+        <div class="exam-dual-grid">
+          <!-- JEE Main -->
+          <div class="exam-result-card editorial-card reveal-item">
+            <div class="exam-card-header">
+              <span class="exam-tag">NATIONAL LEVEL</span>
+              <span class="exam-year">2026</span>
+            </div>
+            <h4 class="exam-title">JEE MAIN</h4>
+            <div class="percentile-display">
+              <span class="percentile-val">97.23</span>
+              <span class="percentile-unit">PERCENTILE</span>
+            </div>
+            <p class="exam-note">Joint Entrance Examination (Main)</p>
+          </div>
+
+          <!-- MHT-CET -->
+          <div class="exam-result-card editorial-card reveal-item">
+            <div class="exam-card-header">
+              <span class="exam-tag">STATE LEVEL</span>
+              <span class="exam-year">2026</span>
+            </div>
+            <h4 class="exam-title">MHT-CET</h4>
+            <div class="percentile-display">
+              <span class="percentile-val">98.74</span>
+              <span class="percentile-unit">PERCENTILE</span>
+            </div>
+            <p class="exam-note">Maharashtra Common Entrance Test</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 03: TECHNICAL SKILLS -->
+    <section id="skills" class="portfolio-section">
+      <div class="section-container">
+        
+        <div class="section-header reveal-item">
+          <span class="section-badge">03 / TECH STACK</span>
+          <h2 class="section-title">TOOLS I'M LEARNING<br><span class="text-copper">TO BUILD WITH.</span></h2>
+        </div>
+
+        <div class="skills-categories-grid">
+          
+          <!-- Category 1: Programming -->
+          <div class="skill-category-card editorial-card reveal-item">
+            <div class="cat-header">
+              <span class="cat-num">01</span>
+              <h3 class="cat-title">PROGRAMMING</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-item">
+                <div class="skill-main">
+                  <span class="skill-bullet"></span>
+                  <span class="skill-name">C++</span>
+                </div>
+                <span class="skill-status-tag">LEARNING  ·  ACTIVE</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-main">
+                  <span class="skill-bullet"></span>
+                  <span class="skill-name">Python</span>
+                </div>
+                <span class="skill-status-tag">LEARNING</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Web Development -->
+          <div class="skill-category-card editorial-card reveal-item">
+            <div class="cat-header">
+              <span class="cat-num">02</span>
+              <h3 class="cat-title">WEB DEVELOPMENT</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-item">
+                <div class="skill-main">
+                  <span class="skill-bullet"></span>
+                  <span class="skill-name">HTML5</span>
+                </div>
+                <span class="skill-status-tag">ACTIVE</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-main">
+                  <span class="skill-bullet"></span>
+                  <span class="skill-name">CSS3 / Modern Layouts</span>
+                </div>
+                <span class="skill-status-tag">ACTIVE</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-main">
+                  <span class="skill-bullet"></span>
+                  <span class="skill-name">JavaScript (ES6+)</span>
+                </div>
+                <span class="skill-status-tag">LEARNING  ·  ACTIVE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Development Tools -->
+          <div class="skill-category-card editorial-card reveal-item">
+            <div class="cat-header">
+              <span class="cat-num">03</span>
+              <h3 class="cat-title">DEVELOPMENT TOOLS</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-item">
+                <div class="skill-main">
+                  <span class="skill-bullet"></span>
+                  <span class="skill-name">Git</span>
+                </div>
+                <span class="skill-status-tag">ACTIVE</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-main">
+                  <span class="skill-bullet"></span>
+                  <span class="skill-name">GitHub</span>
+                </div>
+                <span class="skill-status-tag">ACTIVE</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-main">
+                  <span class="skill-bullet"></span>
+                  <span class="skill-name">Visual Studio Code</span>
+                </div>
+                <span class="skill-status-tag">ACTIVE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: Engineering -->
+          <div class="skill-category-card editorial-card reveal-item">
+            <div class="cat-header">
+              <span class="cat-num">04</span>
+              <h3 class="cat-title">ENGINEERING</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-item">
+                <div class="skill-main">
+                  <span class="skill-bullet"></span>
+                  <span class="skill-name">Electronics &amp; Communication</span>
+                </div>
+                <span class="skill-status-tag">ACADEMIC FOUNDATION</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-main">
+                  <span class="skill-bullet"></span>
+                  <span class="skill-name">Circuits &amp; Engineering Systems</span>
+                </div>
+                <span class="skill-status-tag">FIRST YEAR COURSES</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 04: CURRENTLY EXPLORING -->
+    <section id="exploration" class="portfolio-section">
+      <div class="section-container">
+        
+        <div class="section-header reveal-item">
+          <span class="section-badge">04 / EXPLORATION</span>
+          <h2 class="section-title">EXPLORING THE WORLD<br><span class="text-copper">OF TECHNOLOGY.</span></h2>
+        </div>
+
+        <div class="exploration-grid">
+          
+          <div class="exploration-card editorial-card reveal-item">
+            <div class="exp-num">01</div>
+            <h3 class="exp-title">SOFTWARE DEVELOPMENT</h3>
+            <p class="exp-desc">
+              Learning how to design and build useful software applications.
+            </p>
+            <div class="exp-tag">Core Interest</div>
+          </div>
+
+          <div class="exploration-card editorial-card reveal-item">
+            <div class="exp-num">02</div>
+            <h3 class="exp-title">DATA STRUCTURES &amp; ALGORITHMS</h3>
+            <p class="exp-desc">
+              Strengthening programming fundamentals, logical thinking, and problem-solving skills.
+            </p>
+            <div class="exp-tag">Problem Solving</div>
+          </div>
+
+          <div class="exploration-card editorial-card reveal-item">
+            <div class="exp-num">03</div>
+            <h3 class="exp-title">FULL-STACK WEB DEVELOPMENT</h3>
+            <p class="exp-desc">
+              Exploring frontend interfaces, backend development, APIs, and complete web applications.
+            </p>
+            <div class="exp-tag">Web Technologies</div>
+          </div>
+
+          <div class="exploration-card editorial-card reveal-item">
+            <div class="exp-num">04</div>
+            <h3 class="exp-title">EMBEDDED SYSTEMS</h3>
+            <p class="exp-desc">
+              Exploring how software interacts with microcontrollers, electronic components, and hardware.
+            </p>
+            <div class="exp-tag">Hardware &amp; Software</div>
+          </div>
+
+          <div class="exploration-card editorial-card reveal-item">
+            <div class="exp-num">05</div>
+            <h3 class="exp-title">VLSI &amp; SEMICONDUCTORS</h3>
+            <p class="exp-desc">
+              Developing an interest in integrated circuits, semiconductor technology, and digital hardware.
+            </p>
+            <div class="exp-tag">ECE Focus</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 05: FEATURED PROJECTS -->
+    <section id="projects" class="portfolio-section">
+      <div class="section-container">
+        
+        <div class="section-header reveal-item">
+          <span class="section-badge">05 / SELECTED WORK</span>
+          <h2 class="section-title">IDEAS INTO INTERFACES.<br><span class="text-copper">CONCEPTS INTO CODE.</span></h2>
+          <p class="section-subtext">
+            A collection of projects, experiments, and things I'm building as I grow as a developer.
+          </p>
+        </div>
+
+        <div class="projects-display-stack">
+          
+          <!-- Project 01: Developer Portfolio -->
+          <article class="project-card editorial-card reveal-item">
+            <div class="project-top-bar">
+              <span class="project-index">PROJECT 01</span>
+              <span class="project-status-pill in-progress">
+                <span class="status-pulse-dot"></span>IN PROGRESS
+              </span>
+            </div>
+
+            <div class="project-content-grid">
+              <div class="project-info-pane">
+                <h3 class="project-heading">DEVELOPER PORTFOLIO</h3>
+                <p class="project-summary">
+                  My personal portfolio showcasing my engineering background, technical interests, projects, and frontend development experiments.
+                </p>
+
+                <div class="project-tech-tags">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">Modern JavaScript</span>
+                  <span class="tech-tag">Canvas API</span>
+                  <span class="tech-tag">Motion Design</span>
+                </div>
+
+                <div class="project-action-links">
+                  <a href="https://github.com/sadatkhan-codes" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>GitHub Profile</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-preview-pane">
+                <div class="preview-mockup-frame">
+                  <div class="mockup-header-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mockup-screen-content">
+                    <span class="mockup-watermark">PORTFOLIO INTERFACE</span>
+                    <div class="mockup-accent-bars">
+                      <div class="mockup-bar w-80"></div>
+                      <div class="mockup-bar w-50"></div>
+                      <div class="mockup-bar w-65"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 02: Automated README Generator -->
+          <article class="project-card editorial-card reveal-item">
+            <div class="project-top-bar">
+              <span class="project-index">PROJECT 02</span>
+              <span class="project-status-pill in-progress">
+                <span class="status-pulse-dot"></span>IN PROGRESS
+              </span>
+            </div>
+
+            <div class="project-content-grid">
+              <div class="project-info-pane">
+                <h3 class="project-heading">AUTOMATED README GENERATOR</h3>
+                <p class="project-summary">
+                  A web development project exploring how GitHub repository information and AI can help developers generate useful project documentation.
+                </p>
+
+                <div class="project-tech-tags">
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Web APIs</span>
+                  <span class="tech-tag">Markdown Generation</span>
+                  <span class="tech-tag">AI Integration</span>
+                </div>
+
+                <div class="project-action-links">
+                  <a href="https://github.com/sadatkhan-codes" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>GitHub Profile</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-preview-pane">
+                <div class="preview-mockup-frame">
+                  <div class="mockup-header-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mockup-screen-content">
+                    <span class="mockup-watermark">README GENERATOR</span>
+                    <div class="mockup-accent-bars">
+                      <div class="mockup-bar w-60"></div>
+                      <div class="mockup-bar w-75"></div>
+                      <div class="mockup-bar w-45"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 03: Future Project -->
+          <article class="project-card editorial-card placeholder-project reveal-item">
+            <div class="project-top-bar">
+              <span class="project-index">PROJECT 03</span>
+              <span class="project-status-pill upcoming">
+                UPCOMING
+              </span>
+            </div>
+            <div class="project-info-pane">
+              <h3 class="project-heading">FUTURE PROJECT</h3>
+              <p class="project-summary">
+                A space for my next substantial software or engineering project.
+              </p>
+              <span class="status-note">In concept &amp; architectural planning stage.</span>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 06: CURRENTLY BUILDING -->
+    <section id="in-progress" class="portfolio-section">
+      <div class="section-container">
+        
+        <div class="section-header reveal-item">
+          <span class="section-badge">06 / IN PROGRESS</span>
+          <h2 class="section-title">THE WORK BEHIND<br><span class="text-copper">THE WORK.</span></h2>
+        </div>
+
+        <div class="in-progress-grid">
+          
+          <div class="activity-card editorial-card reveal-item">
+            <div class="activity-num">01</div>
+            <h3 class="activity-title">PERSONAL DEVELOPER PORTFOLIO</h3>
+            <p class="activity-desc">
+              Designing and developing a personal website with responsive layouts, interactive elements, and scroll-based animations.
+            </p>
+            <div class="activity-meta">
+              <span class="activity-status-indicator active">ACTIVE DEVELOPMENT</span>
+              <a href="https://github.com/sadatkhan-codes" target="_blank" rel="noopener noreferrer" class="activity-link">Repository &rarr;</a>
+            </div>
+          </div>
+
+          <div class="activity-card editorial-card reveal-item">
+            <div class="activity-num">02</div>
+            <h3 class="activity-title">AUTOMATED README GENERATOR</h3>
+            <p class="activity-desc">
+              Exploring a tool that uses GitHub repository information and AI to assist with project documentation.
+            </p>
+            <div class="activity-meta">
+              <span class="activity-status-indicator active">RESEARCH &amp; PROTOTYPE</span>
+              <a href="https://github.com/sadatkhan-codes" target="_blank" rel="noopener noreferrer" class="activity-link">Repository &rarr;</a>
+            </div>
+          </div>
+
+          <div class="activity-card editorial-card reveal-item">
+            <div class="activity-num">03</div>
+            <h3 class="activity-title">PROGRAMMING &amp; DSA</h3>
+            <p class="activity-desc">
+              Strengthening programming fundamentals and developing problem-solving skills.
+            </p>
+            <div class="activity-meta">
+              <span class="activity-status-indicator active">DAILY PRACTICE</span>
+            </div>
+          </div>
+
+          <div class="activity-card editorial-card reveal-item">
+            <div class="activity-num">04</div>
+            <h3 class="activity-title">FULL-STACK DEVELOPMENT</h3>
+            <p class="activity-desc">
+              Learning how frontend interfaces, backend services, and APIs work together.
+            </p>
+            <div class="activity-meta">
+              <span class="activity-status-indicator active">EXPLORING CONCEPTS</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 07: MY JOURNEY (PORTAL TO CINEMATIC DEDICATED JOURNEY PAGE) -->
+    <section id="journey" class="portfolio-section">
+      <div class="section-container">
+        
+        <div class="section-header reveal-item">
+          <span class="section-badge">07 / THE JOURNEY</span>
+          <h2 class="section-title">EVERY CHAPTER<br><span class="text-copper">BUILDS THE NEXT.</span></h2>
+          <p class="section-subtext">
+            From Sacred Heart School and Hill Spring College to competitive exam preparation with VRaZ and engineering at BIT Mesra.
+          </p>
+        </div>
+
+        <div class="journey-portal-card editorial-card reveal-item">
+          <div class="portal-narrative">
+            <span class="sub-label copper-badge">CINEMATIC STORY EXPERIENCE</span>
+            <h3 class="portal-heading">
+              AN INTERACTIVE ACADEMIC &amp; ENGINEERING STORY.
+            </h3>
+            <a href="journey.html" class="btn btn-primary" id="btn-open-journey">
+              <span>OPEN DEDICATED JOURNEY PAGE</span>
+              <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 08: BEYOND CODE -->
+    <section id="beyond-code" class="portfolio-section">
+      <div class="section-container">
+        
+        <div class="section-header reveal-item">
+          <span class="section-badge">08 / BEYOND CODE</span>
+          <h2 class="section-title">MORE THAN<br><span class="text-copper">JUST CODE.</span></h2>
+        </div>
+
+        <div class="beyond-grid">
+          
+          <div class="beyond-card editorial-card reveal-item">
+            <div class="beyond-top">
+              <span class="beyond-num">01</span>
+              <div class="beyond-icon-circ">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+            </div>
+            <h3 class="beyond-title">AUTOMOTIVE TECHNOLOGY</h3>
+            <p class="beyond-desc">
+              Exploring the engineering, systems, and technology behind modern vehicles.
+            </p>
+          </div>
+
+          <div class="beyond-card editorial-card reveal-item">
+            <div class="beyond-top">
+              <span class="beyond-num">02</span>
+              <div class="beyond-icon-circ">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+              </div>
+            </div>
+            <h3 class="beyond-title">ELECTRONICS &amp; HARDWARE</h3>
+            <p class="beyond-desc">
+              Understanding how electronic components, circuits, and software work together.
+            </p>
+          </div>
+
+          <div class="beyond-card editorial-card reveal-item">
+            <div class="beyond-top">
+              <span class="beyond-num">03</span>
+              <div class="beyond-icon-circ">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 000 20 14.5 14.5 0 000-20M2 12h20"/></svg>
+              </div>
+            </div>
+            <h3 class="beyond-title">CREATIVE DEVELOPMENT</h3>
+            <p class="beyond-desc">
+              Experimenting with interactive websites, animation, and distinctive digital experiences.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 09: CONTACT -->
+    <section id="contact" class="portfolio-section contact-section">
+      <div class="section-container">
+        
+        <div class="contact-box editorial-card reveal-item">
+          <div class="contact-header">
+            <span class="section-badge">09 / CONTACT</span>
+            <h2 class="contact-title">HAVE AN IDEA?<br><span class="text-copper">LET'S BUILD.</span></h2>
+            <p class="contact-subtext">
+              I'm always interested in learning, building projects, exploring technology, and connecting with people who enjoy creating meaningful things.
+            </p>
+            <p class="contact-linkedin-prompt">
+              For regular updates on my learning journey, projects, and experiences, connect with me on LinkedIn.
+            </p>
+          </div>
+
+          <div class="contact-actions-grid">
+            
+            <a href="mailto:md.sadatkhan2023@gmail.com" class="contact-action-btn email-btn">
+              <div class="action-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="action-info">
+                <span class="action-label">EMAIL ME</span>
+                <span class="action-val">md.sadatkhan2023@gmail.com</span>
+              </div>
+              <span class="action-arrow">&rarr;</span>
+            </a>
+
+            <a href="https://github.com/sadatkhan-codes" target="_blank" rel="noopener noreferrer" class="contact-action-btn">
+              <div class="action-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </div>
+              <div class="action-info">
+                <span class="action-label">VIEW GITHUB</span>
+                <span class="action-val">sadatkhan-codes</span>
+              </div>
+              <span class="action-arrow">&rarr;</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/mohd-sadat-khan-328823410/" target="_blank" rel="noopener noreferrer" class="contact-action-btn linkedin-btn" aria-label="Follow Mohd Sadat Khan's journey on LinkedIn">
+              <div class="action-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </div>
+              <div class="action-info">
+                <span class="action-label">FOLLOW MY JOURNEY ON LINKEDIN &#x2197;</span>
+                <span class="action-val">mohd-sadat-khan</span>
+              </div>
+              <span class="action-arrow">&#x2197;</span>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="section-container footer-container">
+      
+      <div class="footer-top-row">
+        <div class="footer-identity">
+          <div class="footer-name">MOHD SADAT KHAN</div>
+          <div class="footer-role">ECE UNDERGRADUATE  ·  BIT MESRA</div>
+          <div class="footer-tagline text-copper">BUILT WITH CURIOSITY.</div>
+        </div>
+
+        <div class="footer-social-links">
+          <a href="https://github.com/sadatkhan-codes" target="_blank" rel="noopener noreferrer" class="footer-icon-link" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/mohd-sadat-khan-328823410/" target="_blank" rel="noopener noreferrer" class="footer-icon-link" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="mailto:md.sadatkhan2023@gmail.com" class="footer-icon-link" aria-label="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <button id="back-to-top-btn" class="back-to-top-btn" aria-label="Back to top">
+            <span>TOP</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <span class="copyright-text">&copy; <span id="current-year">2026</span> Mohd Sadat Khan. All rights reserved.</span>
+        <span class="footer-sub-tag">BIT Mesra  ·  Ranchi, India</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

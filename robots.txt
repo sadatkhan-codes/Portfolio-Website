@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap (Update domain after configuring your custom production domain)
+Sitemap: https://sadatkhan-codes.github.io/sitemap.xml

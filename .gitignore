@@ -1,0 +1,23 @@
+# Dependencies & Build Artefacts
+node_modules/
+dist/
+build/
+.cache/
+
+# Large Archives & Extraction Backups
+*.zip
+*.tar.gz
+*.7z
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.log
+
+# Editor & IDE Directories
+.vscode/
+.idea/
+*.swp
+*.swo
