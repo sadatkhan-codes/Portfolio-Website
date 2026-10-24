@@ -66,8 +66,17 @@
   function resizeCanvas() {
     if (!canvas || !ctx) return;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = Math.round(window.innerWidth * dpr);
-    canvas.height = Math.round(window.innerHeight * dpr);
+    const cssW = window.innerWidth;
+    const cssH = window.innerHeight;
+
+    // Buffer dimensions match exact device pixel grid
+    canvas.width = Math.round(cssW * dpr);
+    canvas.height = Math.round(cssH * dpr);
+
+    // Explicit CSS pixel dimensions lock internal aspect ratio to 1:1 display ratio
+    // eliminating any non-uniform vertical stretching from mobile browser chrome
+    canvas.style.width = cssW + 'px';
+    canvas.style.height = cssH + 'px';
 
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = 'high';
@@ -122,6 +131,8 @@
     const ih = img.naturalHeight || 1080;
 
     const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const isMobile = screenWidth <= 768;
     const isTablet = screenWidth > 768 && screenWidth <= 1024;
 
@@ -133,14 +144,23 @@
     let offsetY;
 
     if (isMobile) {
-      // Responsive phone framing: frames the portrait in the lower-middle viewport
-      // so the face sits cleanly below the top speech bubble without any overlap
-      scale = Math.max(hRatio * 1.35, vRatio * 0.76);
+      // Natural Mobile Portrait Framing:
+      // In 1920x1080 source frames, the person's head & face are centered horizontally
+      // (head width ≈ 450px, top hair y ≈ 55px, chin y ≈ 620px).
+      // Scale proportionally so the entire face, ears, and neck remain in natural proportions
+      // without being cropped into a narrow vertical strip.
+      const mobileHeadScale = hRatio * 2.15;
+      const minVerticalCover = (ch * 0.70) / ih;
+      scale = Math.max(mobileHeadScale, minVerticalCover);
+
       const renderW = iw * scale;
       const renderH = ih * scale;
       offsetX = (cw - renderW) * 0.5;
-      // Position face comfortably below the greeting bubble (with room above the head)
-      offsetY = Math.max(20, (ch - renderH) * 0.62 + 65) + parallaxY * 0.55;
+
+      // Position top of hair comfortably below the greeting speech bubble:
+      // on small phones (e.g. 568px height) target ~150px CSS, on modern phones ~190-195px CSS.
+      const targetHairCssY = Math.min(195, Math.max(150, screenHeight * 0.23));
+      offsetY = (targetHairCssY * dpr) - (55 * scale) + (parallaxY * 0.55);
     } else if (isTablet) {
       scale = Math.max(hRatio, vRatio) * 0.95;
       const renderW = iw * scale;
