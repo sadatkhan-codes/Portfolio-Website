@@ -176,8 +176,8 @@
       offsetY = (ch - renderH) * 0.48 + parallaxY;
     }
 
-    // Clear background to obsidian tone
-    ctx.fillStyle = '#080605';
+    // Clear background to obsidian tone (#0B0B0D)
+    ctx.fillStyle = '#0B0B0D';
     ctx.fillRect(0, 0, cw, ch);
 
     // Apply smooth opacity
